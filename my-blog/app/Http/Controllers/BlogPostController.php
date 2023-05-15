@@ -15,10 +15,10 @@ class BlogPostController extends Controller
     public function index()
     {
         $posts = BlogPost::all();
-        return view("blog");
+        return view("blog.index", ["posts"=>$posts]);
     }
 
-    /**
+    /**index
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
