@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class BlogPost extends Model
 {
     use HasFactory;
+
+    // protected $timestamp = false;  will not use created_at
 }
