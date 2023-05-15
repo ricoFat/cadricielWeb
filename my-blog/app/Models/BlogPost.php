@@ -10,4 +10,10 @@ class BlogPost extends Model
     use HasFactory;
 
     // protected $timestamp = false;  will not use created_at
+
+    protected $fillable =[
+        'title',
+        'body',
+        'user_id'
+    ];
 }

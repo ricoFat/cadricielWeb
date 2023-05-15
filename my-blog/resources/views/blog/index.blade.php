@@ -4,12 +4,12 @@
 @section('content')
         <div class="row">
             <div class="col-8 ">
-                <p>Cliquex sur un article pour lire </p>  
+                <p>Cliquez sur un article pour lire </p>  
             </div>
 
             <div class="col-4">
                 <p>Créez un nouvel article</p>
-                <a href="" class="btn btn-primary btn-sm">Afficher les articles</a>
+                <a href="{{ route('blog.create') }}" class="btn btn-primary btn-sm">Ajouter</a>
             </div>
         </div>
 

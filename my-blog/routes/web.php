@@ -20,3 +20,6 @@ Route::get('/', function () {
 
 Route::get('/blog',[BlogPostController::class,'index'])->name('blog.index');
 Route::get('blog/{blogPost}',[BlogPostController::class,'show'])->name('blog.show');
+Route::get('blog-ajouter',[BlogPostController::class,'create'])->name('blog.create');
+Route::post('blog-ajouter',[BlogPostController::class,'store']);
+Route::get('blog-edit/{blogPost}',[BlogPostController::class,'edit'])->name('blog.edit');

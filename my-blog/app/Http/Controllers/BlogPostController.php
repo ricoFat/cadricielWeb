@@ -25,9 +25,8 @@ class BlogPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.ajouter');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -36,7 +35,14 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      // return $request;
+
+       $newPost = BlogPost::create([
+         'title'=> $request->title,
+         'body'=> $request->body,
+         'user_id'=> 1
+       ]);
+       return redirect( route('blog.show', $newPost->id)); 
     }
 
     /**
@@ -47,7 +53,7 @@ class BlogPostController extends Controller
      */
     public function show(BlogPost $blogPost)
     {
-        return $blogPost;
+        return view('blog.show', ["blogPost" => $blogPost]);
     }
 
     /**
@@ -58,7 +64,7 @@ class BlogPostController extends Controller
      */
     public function edit(BlogPost $blogPost)
     {
-        //
+        return view('blog.edit', ['blogPost' => $blogPost]);
     }
 
     /**
