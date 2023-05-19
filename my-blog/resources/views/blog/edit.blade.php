@@ -8,6 +8,7 @@
         <div class="card">
             <form method="post">
                 @csrf
+                @method('put')
                 <div class="card-header">
                     Formulaire
                 </div>
@@ -18,7 +19,7 @@
                     <textarea name="body" id="article" class="form-control">{{ $blogPost->body }}</textarea>
                 </div>
                 <div class="card-footer text-center">
-                    <input type="submit" class="btn btn-success" value="Save">
+                    <input type="submit" class="btn btn-success" value="Sauvergarder">
                 </div>
             </form>
         </div>

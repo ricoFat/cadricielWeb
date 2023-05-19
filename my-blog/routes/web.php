@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogPostController;
 
@@ -23,3 +24,7 @@ Route::get('blog/{blogPost}',[BlogPostController::class,'show'])->name('blog.sho
 Route::get('blog-ajouter',[BlogPostController::class,'create'])->name('blog.create');
 Route::post('blog-ajouter',[BlogPostController::class,'store']);
 Route::get('blog-edit/{blogPost}',[BlogPostController::class,'edit'])->name('blog.edit');
+Route::put('blog-edit/{blogPost}', [BlogPostController::class, 'update']);
+Route::delete('blog/{blogPost}', [BlogController::class, 'destroy']);
+
+Route::get('query',  [BlogController::class, 'query']);
