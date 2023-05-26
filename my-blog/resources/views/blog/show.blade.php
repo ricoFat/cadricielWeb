@@ -26,7 +26,7 @@
             <div class="col-4">
                 <a href="{{ route('blog.index')}}" class="btn btn-primary btn sm mt-3">Precedent</a>
                 <a href="{{ route('blog.edit', $blogPost->id)}}" class="btn btn-success btn  mt-3">Modifier</a>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete">
+                <button type="button" class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#modalDelete">
                   Effacer
               </button>
           </div>
