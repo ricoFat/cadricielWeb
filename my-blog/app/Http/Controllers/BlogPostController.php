@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogPostController extends Controller
 {
@@ -25,21 +27,25 @@ class BlogPostController extends Controller
      */
     public function create()
     {
-        return view('blog.ajouter');
+      /*   $categories =  Category::select()
+                       ->OrderBy('category')
+                       ->get(); */
+        $categories = Category::selectCategory();
+        //return $categories;
+        return view('blog.ajouter',['categories'=>$categories] );
     }
     /**
      * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
       // return $request;
-
        $newPost = BlogPost::create([
          'title'=> $request->title,
          'body'=> $request->body,
+         'categories_id'=> $request->categories_id,
          'user_id'=> 1
        ]);
        return redirect( route('blog.show', $newPost->id)); 
@@ -100,5 +106,13 @@ class BlogPostController extends Controller
     {
         $blog = BlogPost::all();
         return $blog;
+    }
+
+    public function pages(){
+        $blogs = BlogPost::Select()
+                ->orderBy('title')
+                ->paginate(5);
+
+        return view('blog.pages', ['blogs' => $blogs]);        
     }
 }

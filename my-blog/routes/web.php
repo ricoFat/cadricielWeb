@@ -28,3 +28,4 @@ Route::put('blog-edit/{blogPost}', [BlogPostController::class, 'update']);
 Route::delete('blog/{blogPost}', [BlogController::class, 'destroy']);
 
 Route::get('query',  [BlogController::class, 'query']);
+Route::get('blog-page', [BlogPostController::class, 'pages']);
