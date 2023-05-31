@@ -20,16 +20,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog',[BlogPostController::class,'index'])->name('blog.index');
-Route::get('blog/{blogPost}',[BlogPostController::class,'show'])->name('blog.show');
-Route::get('blog-ajouter',[BlogPostController::class,'create'])->name('blog.create');
-Route::post('blog-ajouter',[BlogPostController::class,'store']);
-Route::get('blog-edit/{blogPost}',[BlogPostController::class,'edit'])->name('blog.edit');
-Route::put('blog-edit/{blogPost}', [BlogPostController::class, 'update']);
-Route::delete('blog/{blogPost}', [BlogController::class, 'destroy']);
+Route::get('/blog',[BlogPostController::class,'index'])->name('blog.index')->middleware('auth');;
+Route::get('blog/{blogPost}',[BlogPostController::class,'show'])->name('blog.show')->middleware('auth');;
+Route::get('blog-ajouter',[BlogPostController::class,'create'])->name('blog.create')->middleware('auth');;
+Route::post('blog-ajouter',[BlogPostController::class,'store'])->middleware('auth');;
+Route::get('blog-edit/{blogPost}',[BlogPostController::class,'edit'])->name('blog.edit')->middleware('auth');
+Route::put('blog-edit/{blogPost}', [BlogPostController::class, 'update'])->middleware('auth');;
+Route::delete('blog/{blogPost}', [BlogController::class, 'destroy'])->middleware('auth');;
 
 Route::get('query',  [BlogController::class, 'query']);
 Route::get('blog-page', [BlogPostController::class, 'pages']);
 
-Route::get('registration', [CustomAuthController::class , 'create']);
-Route::post('registration', [CustomAuthController::class , 'store']);
+Route::get('registration', [CustomAuthController::class, 'create'])->name('registration');
+Route::post('registration', [CustomAuthController::class, 'store']);
+Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('login', [CustomAuthController::class, 'authentication'])->name('login.authentication');
+Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');

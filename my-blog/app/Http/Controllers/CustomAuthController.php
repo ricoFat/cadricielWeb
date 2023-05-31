@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-
 class CustomAuthController extends Controller
 {
     /**
@@ -17,7 +16,7 @@ class CustomAuthController extends Controller
      */
     public function index()
     {
-        //
+        return view('auth.index');
     }
 
     /**
@@ -38,55 +37,46 @@ class CustomAuthController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'min:6|max:20'
+        ]);
+
+        //if faux redirect()->back()->withErrors()->withInputs()
+
         $user = new User;
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
         $user->save();
+
+       // return redirect()->back()->withSuccess('Utilisateur enregistré');
+        return redirect(route('login'))->withSuccess('Utilisateur enregistré');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
+    public function authentication(Request $request){
+        $request->validate([
+            'email' => 'required|email|exists:users',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if(!Auth::validate($credentials)){ 
+            return redirect()->back()->withErrors(trans('auth.password'));
+        }
+
+        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+        Auth::login($user);
+
+        return redirect()->intended(route('blog.index'));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
+    public function logout(){
+        Auth::logout();
+        return redirect(route('login'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
+   
 }

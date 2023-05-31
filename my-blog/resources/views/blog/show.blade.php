@@ -13,10 +13,10 @@
                     {{ $blogPost->body }}
                 </p>
                 <p>
-                    <strong>Author :</strong> {{ $blogPost->bloghasUser->name}}
+                    <strong>Author :</strong> {{ $blogPost->blogHasUser->name}}
                 </p>
                 <p>
-                  <strong>Categorie :</strong> {{ $blogPost->bloghasCategory->category}}
+              {{--     <strong>Categorie :</strong> {{ $blogPost->blogHasCategory->category}} --}}
               </p>
             </div>
             <hr>
