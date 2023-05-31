@@ -16,7 +16,10 @@
                     <strong>Author :</strong> {{ $blogPost->blogHasUser->name}}
                 </p>
                 <p>
-              {{--     <strong>Categorie :</strong> {{ $blogPost->blogHasCategory->category}} --}}
+              {{--      {{ $blogPost->blogHasCategory->category}} --}}
+              @isset($blogPost->blogHasCategory)
+              <strong>Categorie :</strong> {{ $blogPost->blogHasCategory->category}}
+              @endisset
               </p>
             </div>
             <hr>

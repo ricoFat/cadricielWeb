@@ -20,7 +20,7 @@
                     <a class="nav-link" href="{{route('registration')}}">Registration</a>
                     <a class="nav-link" href="{{route('login')}}">Login</a>
                 @else
-                    <a class="nav-link" href="">Users</a>
+                    <a class="nav-link" href="{{ route('user.list')}}">Users</a>
                     <a class="nav-link" href="{{route('blog.index')}}">Blogs</a>
                     <a class="nav-link" href="{{route('logout')}}">Logout</a>
                 @endguest
