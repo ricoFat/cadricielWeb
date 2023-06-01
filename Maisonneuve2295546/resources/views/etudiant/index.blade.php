@@ -3,16 +3,16 @@
 @section('titleHeader', 'Étudiants')
 @section('content')
         <div class="row">
-            <div class="col-8 ">
-                <p>Cliquez sur le nom pour les details </p>  
-               
+            <div class="col text-center" >
+                <p>Cliquez sur le nom de l'étudiant pour avoir les details </p>  
+                
             </div>
-
+{{-- 
             <div class="col-4">
                 <p>Créez un nouvel etudiant</p>
                 <a href="{{ route('etudiant.create') }}" class="btn btn-outline-primary btn-sm">Ajouter</a>
              
-            </div>
+            </div> --}}
         </div>
 
         <div class="row mt-5">

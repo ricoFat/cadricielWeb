@@ -4,8 +4,8 @@
 @section('content')
         <div class="row">
             <div class="col-12 text-center">
-                <p>Visiter notre page de gestion des Étudiants</p>
-                <a href="{{ route('etudiant.index')}}" class="btn btn-outline-primary">Afficher les étudiants</a>
+                <p>  Bienvenue sur notre portail de gestion des Étudiants</p>
+                {{-- <a href="{{ route('etudiant.index')}}" class="btn btn-outline-primary">Afficher les étudiants</a> --}}
             </div>
         </div>
     </div>
