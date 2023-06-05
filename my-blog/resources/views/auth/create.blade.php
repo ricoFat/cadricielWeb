@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Registration')
-@section('titleHeader', 'Registration')
+@section('title', trans('lang.text_registration'))
+@section('titleHeader', trans('lang.text_registration'))
 @section('content')
     <div class="row justify-content-center">
         <div class="col-6">
