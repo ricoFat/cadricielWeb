@@ -29,6 +29,8 @@ Route::get('blog-edit/{blogPost}',[BlogPostController::class,'edit'])->name('blo
 Route::put('blog-edit/{blogPost}', [BlogPostController::class, 'update'])->middleware('auth');
 Route::delete('blog/{blogPost}', [BlogController::class, 'destroy'])->middleware('auth');
 
+Route::get('blog-pdf/{blogPost}', [BlogPostController::class, 'showPdf']);
+
 Route::get('query',  [BlogController::class, 'query']);
 Route::get('blog-page', [BlogPostController::class, 'pages']);
 
@@ -41,3 +43,8 @@ Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 Route::get('user-list', [CustomAuthController::class , 'userList'])->name('user.list')->middleware('auth');
 
 Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
+
+Route::get('forgot-password', [CustomAuthController::class, 'forgotPassword'])->name('forgot.password');
+Route::post('forgot-password', [CustomAuthController::class, 'tempPassword']);
+Route::get('new-password/{user}/{tempPassword}',[CustomAuthController::class, 'newPassword'] )->name('new.password');
+Route::put('new-password/{user}/{tempPassword}', [CustomAuthController::class, 'storeNewPassword']);  

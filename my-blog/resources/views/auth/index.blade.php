@@ -20,6 +20,7 @@
                             {{$errors->first('password')}}
                         </div>
                     @endif
+                 {{--    <a href="{{ route('forgot.password') }}">Forgot Password</a> --}}
                 </div>
                 <div class="card-footer d-grid mx-auto">
                     <input type="submit" value="Login" class="btn btn-dark btn-block">
