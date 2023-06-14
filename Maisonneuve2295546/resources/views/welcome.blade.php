@@ -4,8 +4,7 @@
 @section('content')
         <div class="row">
             <div class="col-12 text-center">
-                <p>  Bienvenue sur notre portail de gestion des Étudiants</p>
-                {{-- <a href="{{ route('etudiant.index')}}" class="btn btn-outline-primary">Afficher les étudiants</a> --}}
+                <p>  Bienvenue sur notre blog étudiants du collège Maisonneuve</p>
             </div>
         </div>
     </div>

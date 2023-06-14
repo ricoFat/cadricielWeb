@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\EtudiantAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,5 @@ Route::put('etudiant-edit/{etudiantInfo}', [EtudiantController::class, 'update']
 Route::get('etudiant-create',[EtudiantController::class,'create'])->name('etudiant.create');
 Route::post('etudiant-create',[EtudiantController::class,'store']);
 Route::delete('etudiant/{etudiantInfo}', [EtudiantController::class, 'destroy']);
+
+Route::get('login', [EtudiantAuthController::class, 'index'])->name('login');
