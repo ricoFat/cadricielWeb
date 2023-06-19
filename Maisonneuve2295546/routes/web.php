@@ -27,3 +27,8 @@ Route::post('etudiant-create',[EtudiantController::class,'store']);
 Route::delete('etudiant/{etudiantInfo}', [EtudiantController::class, 'destroy']);
 
 Route::get('login', [EtudiantAuthController::class, 'index'])->name('login');
+Route::get('registration', [EtudiantAuthController::class, 'create'])->name('registration');
+Route::post('registration', [EtudiantAuthController::class, 'store']);
+
+
+

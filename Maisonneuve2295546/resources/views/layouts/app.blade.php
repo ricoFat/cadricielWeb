@@ -33,13 +33,13 @@
             
         </ul>
         <ul class="navbar-nav ml-auto">
+          <a class="nav-link{{--  @if($lang == 'fr') text-info @endif--}}"  {{-- href="{{route('lang', 'fr')}}" --}}>Francais<i class='flag flag-france'></i></a>
+                    <a class="nav-link {{-- @if($lang == 'en') text-info @endif --}}" {{-- href="{{route('lang', 'en')}}" --}}>Anglais <i class='flag flag-united-states'></i></a>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal"  href="{{route('login')}}">Connexion</a>
-            {{-- <button type="button" class="btn btn-outline-light me-3"  href="{{route('login')}}">Connexion</button> --}}
+            <a class="nav-link " data-bs-toggle="modal" data-bs-target="#loginModal"  href="{{route('login')}}">Connexion</a>
           </li>
           <li class="nav-item me-3">
-            {{-- <a class="nav-link" href="#">Sign Up</a> --}}
-            <button type="button" class="btn btn-outline-success">Enregistrer</button>
+             <a class="nav-link" href="{{route('registration')}}">Enregistrer</a>
           </li>
         </ul>
       </div>

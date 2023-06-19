@@ -19,7 +19,7 @@
                     <tbody>
                       <tr class="table-info">
                         
-                        <td>{{ $etudiantInfo->nom }}</td>
+                        <td>{{ $etudiantInfo->name }}</td>
                         <td>{{ $etudiantInfo->email}}</td>
                         <td>{{ $etudiantInfo->phone}}</td>
                         <td>{{ $etudiantInfo->date_de_naissance}}</td>

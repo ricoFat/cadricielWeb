@@ -4,15 +4,8 @@
 @section('content')
         <div class="row">
             <div class="col text-center" >
-                <p>Cliquez sur le nom de l'étudiant pour avoir les details </p>  
-                
+                <p>Cliquez sur le nom de l'étudiant pour avoir les details </p>      
             </div>
-{{-- 
-            <div class="col-4">
-                <p>Créez un nouvel etudiant</p>
-                <a href="{{ route('etudiant.create') }}" class="btn btn-outline-primary btn-sm">Ajouter</a>
-             
-            </div> --}}
         </div>
 
         <div class="row mt-5">
@@ -24,8 +17,9 @@
                     <div class="card-body">
                     <ul class="list-inline">
                         @forelse ($etudiants as $etudiant)
-                          <li> <a href="{{ route('etudiant.show', $etudiant->id)}}" class="text-decoration-none">{{ $etudiant->nom }}</a> </li>
-                          
+                            <li> 
+                                <a href="{{ route('etudiant.show', $etudiant->id)}}" class="text-decoration-none">{{ $etudiant->name }}</a>
+                            <li>  
                         @empty 
                         <li class="text-danger">Aucun etuduant trouvé</li>
                        @endforelse
