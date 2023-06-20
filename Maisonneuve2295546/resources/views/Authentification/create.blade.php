@@ -8,7 +8,7 @@
                 <form method="post">
                 @csrf
                 <div class="card-body">
-                    <input type="email" class="form-control mt-3" name="email" placeholder="Courriel" value="{{old('email')}}"> @if($errors->has('email'))
+                    <input type="email" class="form-control mt-3" name="email" placeholder="@lang('lang.text_email')" value="{{old('email')}}"> @if($errors->has('email'))
                     <div class="text-danger mt-2">
                         {{$errors->first('email')}}
                     </div>
@@ -29,7 +29,7 @@
                             <option value="{{ $ville->id }}" >{{ $ville->nom }}</option>
                         @endforeach
                     </select>
-                    <input type="password" class="form-control mt-3" name="password" placeholder="Password">
+                    <input type="password" class="form-control mt-3" name="password" placeholder="@lang('lang.text_password')">
                     @if($errors->has('password'))
                         <div class="text-danger mt-2">
                             {{$errors->first('password')}}
@@ -37,7 +37,7 @@
                     @endif
                 </div>
                 <div class="card-footer d-grid mx-auto">
-                    <input type="submit" value="Enregistrer" class="btn btn-outline-success btn-block">
+                    <input type="submit" value="@lang('lang.text_save')" class="btn btn-outline-success btn-block">
                 </div>
                 
                 </form>

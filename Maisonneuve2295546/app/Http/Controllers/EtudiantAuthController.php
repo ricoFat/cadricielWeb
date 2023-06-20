@@ -31,7 +31,6 @@ class EtudiantAuthController extends Controller
     {
         $villes = Ville::selectVilles();
         return view('Authentification.create',['villes'=>$villes]);
-
     }
 
     /**
@@ -62,6 +61,27 @@ class EtudiantAuthController extends Controller
         $etudiant->save();
 
         return redirect()->back()->withSuccess('Utilisateur enregistré');
+    }
+
+    public function authentication(Request $request){
+
+        $request->validate([
+            'email' => 'required|email|exists:users',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if(!Auth::validate($credentials)){ 
+            return redirect()->back()->withErrors(trans('auth.password'));
+        }
+
+        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+        Auth::login($user);
+        
+        return redirect()->intended(route('etudiant.index'));
+
     }
 
 }

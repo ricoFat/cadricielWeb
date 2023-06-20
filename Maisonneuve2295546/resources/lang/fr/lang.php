@@ -1,31 +1,30 @@
 <?php
-//EN
+//FR
 return [
-//auth.index
-    'text_login' => 'Login',
-    'text_email' => 'email',
-    'text_password' => 'password',
+    //auth.index
+    'text_login' => 'Connecter',
+    'text_email' => 'courriel',
+    'text_password' => 'mot de passe',
 
-// Success messages
-    'text_success_user' => 'User recorded',
+    // Success messages
+    'text_success_user' => 'Utilisateur enregistré',
 
-//layouts.app
-    'text_hello' => 'Hello',
-    'text_logout' => 'Logout',
+    //layouts.app
+    'text_hello' => 'Salut',
+    'text_logout' => 'Deconnecter',
 
-// auth.create    
-    'text_registration' => 'Registration',
-    'text_name' => 'Name',
-    'text_save' => 'Save',
+    // auth.create    
+    'text_registration' => 'Enregistrer',
+    'text_name' => 'Nom',
+    'text_save' => 'Sauvegarder',
 
-    'text_blogs' => 'Blogs',
-    'text_users' => 'Users',
+    'text_home' => 'Acceuil',
+    'text_etudiant' => 'Étudiants',
 
     // auth.forgot
-    'text_forgot_password' =>'Forgot Password',
-    'text_send' =>'Send',
+    'text_forgot_password' => 'Mot de passe oublie',
+    'text_send' => 'Envoyer',
 
-    // auth.new-password
-    'text_new_password' =>'New Password',
-    'text_confirm_new_password' =>'Confirm Password'
+    'text_welcome_page' => 'Bienvenue sur notre blog étudiants du collège Maisonneuve'
+
 ];

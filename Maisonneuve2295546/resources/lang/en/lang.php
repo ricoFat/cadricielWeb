@@ -18,8 +18,8 @@ return [
     'text_name' => 'Name',
     'text_save' => 'Save',
 
-    'text_blogs' => 'Blogs',
-    'text_users' => 'Users',
+    'text_home' => 'Home',
+    'text_etudiant' => 'Students',
 
     // auth.forgot
     'text_forgot_password' =>'Forgot Password',
@@ -27,5 +27,7 @@ return [
 
     // auth.new-password
     'text_new_password' =>'New Password',
-    'text_confirm_new_password' =>'Confirm Password'
+    'text_confirm_new_password' =>'Confirm Password',
+
+    'text_welcome_page' => 'Welcome to our Maisonneuve College student\'s blog'
 ];
