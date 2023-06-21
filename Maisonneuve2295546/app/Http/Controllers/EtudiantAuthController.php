@@ -42,7 +42,7 @@ class EtudiantAuthController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|min:2',
             'email' => 'required|email|unique:users',
             'password' => 'min:6|max:20'
         ]);
@@ -80,8 +80,12 @@ class EtudiantAuthController extends Controller
 
         Auth::login($user);
         
-        return redirect()->intended(route('etudiant.index'));
+        return redirect()->intended(route('forum.index'));
+    }
 
+    public function logout(){
+        Auth::logout();
+        return redirect(route('login'));
     }
 
 }
