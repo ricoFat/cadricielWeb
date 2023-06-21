@@ -25,6 +25,8 @@ return [
     'text_forgot_password' => 'Mot de passe oublie',
     'text_send' => 'Envoyer',
 
-    'text_welcome_page' => 'Bienvenue sur notre blog étudiants du collège Maisonneuve'
+    'text_welcome_page' => 'Bienvenue sur notre blog étudiants du collège Maisonneuve',
+    'text_lister'=> 'Lister',
+    'text_ajouter'=> 'Ajouter'
 
 ];

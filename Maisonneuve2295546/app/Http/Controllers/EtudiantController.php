@@ -33,7 +33,7 @@ class EtudiantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Etudiant  $blogPost
+     * @param  \App\Models\Etudiant  $etudiant
      * @return \Illuminate\Http\Response
      */
     public function show(Etudiant $etudiantInfo)
@@ -51,7 +51,7 @@ class EtudiantController extends Controller
     {
       
        $newEtudiant = Etudiant::create([
-         'nom'=> $request->nom,
+         'name'=> $request->name,
          'email'=> $request->email,
          'date_de_naissance'=> $request->date_de_naissance,
          'villes_id'=> $request->villes_id,
@@ -64,7 +64,7 @@ class EtudiantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  \App\Models\Etudiant $etudiant
      * @return \Illuminate\Http\Response
      */
     public function edit(Etudiant $etudiantInfo)
@@ -78,13 +78,13 @@ class EtudiantController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  \App\Models\Etudiant  $etudiant
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Etudiant $etudiantInfo)
     {
         $etudiantInfo->update([
-            'nom'=>$request->nom, 
+            'name'=>$request->name, 
             'email'=>$request->email,
             'adresse'=>$request->adresse,
             'phone'=>$request->phone,
@@ -98,7 +98,7 @@ class EtudiantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  \App\Models\Etudiant  $etudiant
      * @return \Illuminate\Http\Response
      */
     public function destroy(Etudiant $etudiantInfo)

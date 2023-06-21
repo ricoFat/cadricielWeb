@@ -15,7 +15,7 @@ class EtudiantFactory extends Factory
     public function definition()
     {
         return [
-            'nom' => $this->faker->name,
+            'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'adresse' => $this->faker->address,
             'phone' => $this->faker->phoneNumber,

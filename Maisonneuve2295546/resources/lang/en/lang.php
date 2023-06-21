@@ -29,5 +29,7 @@ return [
     'text_new_password' =>'New Password',
     'text_confirm_new_password' =>'Confirm Password',
 
-    'text_welcome_page' => 'Welcome to our Maisonneuve College student\'s blog'
+    'text_welcome_page' => 'Welcome to our Maisonneuve College student\'s blog',
+    'text_lister'=> 'List',
+    'text_ajouter'=> 'Add'
 ];

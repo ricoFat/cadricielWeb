@@ -14,7 +14,7 @@
                 </div>
                 <div class="card-body">
                     <label for="nom" >Nom:</label>
-                    <input type="text" name="nom" id="name" class="form-control" value="{{ old('nom',$etudiantInfo->nom) }}">
+                    <input type="text" name="name" id="name" class="form-control" value="{{ old('nom',$etudiantInfo->name) }}">
                     <label for="email" class="mt-3">Courriel:</label> 
                     <input type="email" name="email" id="email" class="form-control" value="{{ old('email',$etudiantInfo->email) }}">
                     <label for="email" class="mt-3" >Date de naissance:</label> 
