@@ -31,5 +31,9 @@ return [
 
     'text_welcome_page' => 'Welcome to our Maisonneuve College student\'s blog',
     'text_lister'=> 'List',
-    'text_ajouter'=> 'Add'
+    'text_ajouter'=> 'Add',
+    'text_file'=> 'File',
+    'text_detail_etudiant'=>'Click on the student\'s name for details',
+    'text_liste_etudiant'=>'Student\'s list'
+
 ];

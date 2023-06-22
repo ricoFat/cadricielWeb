@@ -38,6 +38,15 @@
                 <li><a class="dropdown-item" href="{{ route('forum.index')}}">@lang('lang.text_lister')</a></li>
                 <li><a class="dropdown-item" href="{{ route('forum.create') }}">@lang('lang.text_ajouter')</a></li>
               </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">@lang('lang.text_file')</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ route('forum.index')}}">@lang('lang.text_lister')</a></li>
+                <li><a class="dropdown-item" href="{{ route('upload.form') }}">@lang('lang.text_ajouter')</a></li>
+              </ul>
+            </li>
             
         </ul>
         <ul class="navbar-nav ml-auto">

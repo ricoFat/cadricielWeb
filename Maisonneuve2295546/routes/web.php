@@ -2,6 +2,7 @@
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\EtudiantAuthController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\ForumController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,8 @@ Route::get('forum', [ForumController::class, 'index'])->name('forum.index')->mid
 Route::get('forum-ajouter',[ForumController::class,'create'])->name('forum.create')->middleware('auth');
 Route::get('forum/{forumPost}',[ForumController::class,'show'])->name('forum.show')->middleware('auth');
 Route::post('forum-ajouter',[ForumController::class,'store'])->middleware('auth');
+
+Route::get('/upload', [FileController::class, 'showUploadForm'])->name('upload.form')->middleware('auth');
 
 
 

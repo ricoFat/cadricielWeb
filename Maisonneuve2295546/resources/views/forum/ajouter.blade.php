@@ -24,18 +24,18 @@
                     <!-- French Tab -->
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="fr-tab">
-                            <label for="title_fr">Titre </label>
-                            <input type="text" name="title_fr" id="title_fr" class="form-control">
+                            <label for="titre_fr">Titre </label>
+                            <input type="text" name="titre_fr" id="title_fr" class="form-control">
                             <label for="article_fr">Article </label>
-                            <textarea name="body_fr" id="article_fr" class="form-control"></textarea>
+                            <textarea name="contenu_fr" id="article_fr" class="form-control"></textarea>
                         </div>
 
                         <!-- English Tab -->
                         <div class="tab-pane fade" id="en-tab">
                             <label for="title_en">Title </label>
-                            <input type="text" name="title_en" id="title_en" class="form-control">
+                            <input type="text" name="titre" id="title_en" class="form-control">
                             <label for="article_en">Article </label>
-                            <textarea name="body_en" id="article_en" class="form-control"></textarea>
+                            <textarea name="contenu" id="article_en" class="form-control"></textarea>
                         </div>
                     </div>
               

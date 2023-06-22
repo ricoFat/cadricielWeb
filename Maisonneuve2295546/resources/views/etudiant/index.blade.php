@@ -1,10 +1,10 @@
 @extends('.layouts.app')
-@section('title', 'Liste des etuduiants')
-@section('titleHeader', 'Étudiants')
+@section('title', trans('lang.text_liste_etudiant'))
+@section('titleHeader', trans('lang.text_etudiant'))
 @section('content')
         <div class="row">
             <div class="col text-center" >
-                <p>Cliquez sur le nom de l'étudiant pour avoir les details </p>      
+                <p>@lang('lang.text_detail_etudiant') </p>      
             </div>
         </div>
 
@@ -12,7 +12,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h4>Liste des étudiants</h4>
+                        <h4>@lang('lang.text_liste_etudiant')</h4>
                     </div>
                     <div class="card-body">
                     <ul class="list-inline">

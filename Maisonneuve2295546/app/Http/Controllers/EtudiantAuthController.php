@@ -42,9 +42,12 @@ class EtudiantAuthController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:2',
-            'email' => 'required|email|unique:users',
-            'password' => 'min:6|max:20'
+			'nom' =>'min:2|max:25',
+			'adresse' =>'max :25',
+			'ville_id'=>'exists :App\Models\Ville,id',
+			'email'=>'required|email|unique:users',
+			'telephone'=>'numeric|regex: ^\(\d{3}\)\s\d{3}-\d{4}',
+			'date_naissance'=>'format:jj/mm/yyyy',
         ]);
 
         //if faux redirect()->back()->withErrors()->withInputs()

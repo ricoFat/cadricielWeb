@@ -27,6 +27,10 @@ return [
 
     'text_welcome_page' => 'Bienvenue sur notre blog étudiants du collège Maisonneuve',
     'text_lister'=> 'Lister',
-    'text_ajouter'=> 'Ajouter'
+    'text_ajouter'=> 'Ajouter',
+
+    'text_file'=> 'Fichier',
+    'text_detail_etudiant'=>'Cliquez sur le nom de l\'étudiant pour avoir les details',
+    'text_liste_etudiant' =>' Liste des étudiants'
 
 ];

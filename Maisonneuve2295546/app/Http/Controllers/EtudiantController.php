@@ -49,6 +49,15 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
+
+      /*   $request->validate([
+            'nom' => 'min:2|max:25',
+            'adresse' => 'max:25',
+            'villes_id' => 'exists:App\Models\Ville,id',
+            'email' => 'required|email|unique:users',
+            'telephone' => 'numeric|regex:/^\(\d{3}\)\s\d{3}-\d{4}$/',
+            'date_de_naissance' => 'date_format:d/m/Y',
+        ]); */
       
        $newEtudiant = Etudiant::create([
          'name'=> $request->name,
