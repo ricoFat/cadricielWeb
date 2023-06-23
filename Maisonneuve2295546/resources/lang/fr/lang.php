@@ -17,6 +17,11 @@ return [
     'text_registration' => 'Enregistrer',
     'text_name' => 'Nom',
     'text_save' => 'Sauvegarder',
+    'text_annuler' => 'Annuler',
+    'text_precedent' => 'Précédent',
+    'text_effacer' => 'Effacer',
+    'text_modifier' => 'Modifier',
+    'text_retourner' => 'Retourner',
 
     'text_home' => 'Acceuil',
     'text_etudiant' => 'Étudiants',
@@ -31,6 +36,13 @@ return [
 
     'text_file'=> 'Fichier',
     'text_detail_etudiant'=>'Cliquez sur le nom de l\'étudiant pour avoir les details',
-    'text_liste_etudiant' =>' Liste des étudiants'
+    'text_liste_etudiant' =>' Liste des étudiants',
+    'text_liste_article' =>' Liste des articles',
+    'text_lire' =>'Cliquez sur un article pour lire',
+    'text_creer' =>'Créez un nouvel article',
+    'text_le'=>'Le',
+    'text_creation'=>'Crée',
+    'text_auteur'=> 'Auteur'
+
 
 ];

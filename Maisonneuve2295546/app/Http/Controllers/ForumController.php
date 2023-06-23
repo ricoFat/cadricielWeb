@@ -39,9 +39,60 @@ class ForumController extends Controller
      * @param  \App\Models\forumPost  $forumPost
      * @return \Illuminate\Http\Response
      */
-    public function show(forumPost $forumPost)
+    public function show(ForumPost $forumPost)
     {
         return view('forum.show', ["forumPost" => $forumPost]);
     }
     
+    public function edit(ForumPost $forumPost)
+    {
+        return view('forum.edit', ['forumPost' => $forumPost]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\forumPost  $forumPost
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, ForumPost $forumPost)
+    {
+        $forumPost->update([
+            'title'=>$request->titre, 
+            'body'=>$request->contenu
+        ]);
+
+        return redirect(route('forum.show', $forumPost));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\forumPost  $forumPost
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(forumPost $forumPost)
+    {
+        $forumPost->delete();
+        return redirect(route('forum.index'));
+    }
+
+     /**
+     * Store a newly created resource in storage.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+      // return $request;
+       $newPost = ForumPost::create([
+         'titre'=> $request->titre,
+         'contenu'=> $request->contenu,
+         'titre_en'=> $request->titre_en,
+         'contenu_en'=> $request->contenu_en,
+         'etudiant_id'=> $request->etudiant_id
+       ]);
+       return redirect( route('forum.show', $newPost->id)); 
+    }
 }

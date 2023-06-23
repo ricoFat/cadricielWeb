@@ -41,8 +41,12 @@ Route::get('forum', [ForumController::class, 'index'])->name('forum.index')->mid
 Route::get('forum-ajouter',[ForumController::class,'create'])->name('forum.create')->middleware('auth');
 Route::get('forum/{forumPost}',[ForumController::class,'show'])->name('forum.show')->middleware('auth');
 Route::post('forum-ajouter',[ForumController::class,'store'])->middleware('auth');
+Route::get('forum-edit/{forumPost}',[ForumController::class,'edit'])->name('forum.edit')->middleware('auth');
+Route::put('forum-edit/{forumPost}', [ForumController::class, 'update'])->middleware('auth');
+Route::delete('forum/{forumPost}', [ForumController::class, 'destroy'])->middleware('auth');
 
 Route::get('/upload', [FileController::class, 'showUploadForm'])->name('upload.form')->middleware('auth');
+Route::post('/upload', [FileController::class, 'upload'])->middleware('auth');
 
 
 

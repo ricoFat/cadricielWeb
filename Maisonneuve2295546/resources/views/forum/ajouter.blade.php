@@ -24,18 +24,26 @@
                     <!-- French Tab -->
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="fr-tab">
-                            <label for="titre_fr">Titre </label>
-                            <input type="text" name="titre_fr" id="title_fr" class="form-control">
-                            <label for="article_fr">Article </label>
-                            <textarea name="contenu_fr" id="article_fr" class="form-control"></textarea>
+                            <label for="titre">Titre </label>
+                            <input type="text" name="titre" id="title_fr" class="form-control">
+                            <label for="article">Article </label>
+                            <textarea name="contenu" id="article_fr" class="form-control"></textarea>
+                            <label for="title">Date de création </label>
+                            <input type="date" name="date_creation" id="date_creation" class="form-control">
+                            <label for="user_id_en">User ID</label>
+                            <input type="text" name="etudiant_id" id="user_id_en" class="form-control" value="{{ auth()->user()->id }}" readonly>
                         </div>
 
                         <!-- English Tab -->
                         <div class="tab-pane fade" id="en-tab">
-                            <label for="title_en">Title </label>
+                            <label for="titre_en">Title </label>
                             <input type="text" name="titre" id="title_en" class="form-control">
                             <label for="article_en">Article </label>
-                            <textarea name="contenu" id="article_en" class="form-control"></textarea>
+                            <textarea name="contenu" id="contenu_en" class="form-control"></textarea>
+                            <label for="titre_en">Date de création </label>
+                            <input type="date" name="date_creation" id="t" class="form-control">
+                            
+                            <input type="hidden" name="etudiant_id" id="user_id_en" class="form-control" value="{{ auth()->user()->id }}" readonly>
                         </div>
                     </div>
               

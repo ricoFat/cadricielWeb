@@ -17,6 +17,12 @@ return [
     'text_registration' => 'Registration',
     'text_name' => 'Name',
     'text_save' => 'Save',
+    'text_annuler' => 'Cancel',
+    'text_precedent' => 'Previous',
+    'text_effacer' => 'Erase',
+    'text_modifier' => 'Modify',
+    'text_retourner' => 'Return',
+    
 
     'text_home' => 'Home',
     'text_etudiant' => 'Students',
@@ -34,6 +40,12 @@ return [
     'text_ajouter'=> 'Add',
     'text_file'=> 'File',
     'text_detail_etudiant'=>'Click on the student\'s name for details',
-    'text_liste_etudiant'=>'Student\'s list'
-
+    'text_liste_etudiant'=>'Student\'s list',
+    'text_liste_article' =>'List of articles',
+    'text_lire' =>'Click on an article to read',
+    'text_creer' =>'Create a new article',
+    'text_le'=>'On',
+    'text_creation'=>'Created',
+    'text_auteur'=> 'Auteur',
+    'text_auteur'=> 'Author'
 ];

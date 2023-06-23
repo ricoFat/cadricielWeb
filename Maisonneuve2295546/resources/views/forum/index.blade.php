@@ -1,15 +1,15 @@
 @extends('.layouts.app')
 @section('title', 'Liste des articles')
-@section('titleHeader', 'Article')
+@section('titleHeader', 'Articles')
 @section('content')
         <div class="row">
             <div class="col-8 ">
-                <p>Cliquez sur un article pour lire </p>  
+                <p>@lang('lang.text_lire') </p>  
             </div>
 
             <div class="col-4">
-                <p>Créez un nouvel article</p>
-                <a  href="{{ route('forum.create') }}" class="btn btn-primary btn-sm">Ajouter</a>
+                <p>@lang('lang.text_creer')</p>
+                <a  href="{{ route('forum.create') }}" class="btn btn-primary btn-sm">@lang('lang.text_ajouter')</a>
             </div>
         </div>
 
@@ -17,7 +17,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Liste des articles</h4>
+                        <h4>@lang('lang.text_liste_article')</h4>
                     </div>
                     <div class="card-body">
                         <ul>

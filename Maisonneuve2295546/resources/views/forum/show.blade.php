@@ -3,23 +3,27 @@
 @section('titleHeader', 'Article')
 @section('content')
         <div class="row mt-5">
-            <div class="col-12">
-                <a href="{{route('forum.index')}}" class="btn btn-outline-primary btn-sm">Retourner</a>
+            <div class="col-12">  
                 <hr>
-                <h2 class='display-6 mt-5' >
+                <h2 class='display-6 mt-4' >
                     {{$forumPost->title}}
                 </h2>
                 <p>
-                    {{ $forumPost->body }}
+                    {{ $forumPost->contenu }}
                 </p>
                 <p>
-                    <strong>Author :</strong> {{ $forumPost->forumHasUser->name}}
+                    <strong>@lang('lang.text_auteur')  :</strong> {{ $forumPost->forumHasUser->name}}
+                    <p>
+                      <strong>@lang('lang.text_creation')  :</strong><span> @lang('lang.text_le') </span>
+                      @if (app()->getLocale() === 'fr')
+                          {{ strftime('%d-%m-%Y', strtotime($forumPost->date_creation)) }}
+                      @elseif (app()->getLocale() === 'en')
+                            {{ strftime('%B-%d-%Y', strtotime($forumPost->date_creation)) }}
+                      @endif
+
+                    </p>
                 </p>
                 <p>
-              {{--      {{ $forumPost->forumHasCategory->category}} --}}
-             {{--  @isset($forumPost->forumHasCategory)
-              <strong>Categorie :</strong> {{ $forumPost->forumHasCategory->category}}
-              @endisset --}}
               </p>
             </div>
             <hr>
@@ -27,10 +31,10 @@
 
         <div class="row">
             <div class="col-4">
-                <a href="{{ route('forum.index')}}" class="btn btn-primary btn sm mt-3">Precedent</a>
-                <a href="{{ route('forum.edit', $forumPost->id)}}" class="btn btn-success btn  mt-3">Modifier</a>
+                <a href="{{ route('forum.index')}}" class="btn btn-primary btn sm mt-3">@lang('lang.text_retourner')</a>
+                <a href="{{ route('forum.edit', $forumPost->id) }}" class="btn btn-secondary  mt-3">@lang('lang.text_modifier')</a>
                 <button type="button" class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#modalDelete">
-                  Effacer
+                  @lang('lang.text_effacer')
               </button>
           </div>
       </div>
